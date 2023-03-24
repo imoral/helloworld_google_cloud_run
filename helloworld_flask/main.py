@@ -7,6 +7,7 @@
 import os
 
 from flask import Flask
+from user import User
 
 app = Flask(__name__)
 
@@ -14,7 +15,8 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     name = os.environ.get("NAME", "World")
-    return f"Hello {name}!"
+    user = User('John', 'Doe')
+    return f"Hello {name}! Your user is: {user.get_full_name()}"
 
 
 if __name__ == "__main__":
