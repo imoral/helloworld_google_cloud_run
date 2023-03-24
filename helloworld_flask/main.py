@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     name = os.environ.get("NAME", "World")
-    user = User('John', 'Doe')
+    user = User('John', 'pipa')
     return f"Hello {name}! Your user is: {user.get_full_name()}"
 
 
